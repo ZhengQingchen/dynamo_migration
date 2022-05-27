@@ -4,6 +4,7 @@ defmodule Mix.Tasks.Dynamo.Setup do
 
   @spec run(any) :: :ok
   def run(_) do
+    Mix.Task.run("app.start")
     DynamoMigration.setup()
   end
 end

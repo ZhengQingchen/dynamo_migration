@@ -13,6 +13,7 @@ defmodule Mix.Tasks.Dynamo.Reset do
 
   @spec run(any) :: :ok
   def run(args) do
+    Mix.Task.run("app.start")
     case OptionParser.parse!(args, strict: @switches, aliases: @aliases) do
       {[prefix: prefix], []} ->
         DynamoMigration.reset(prefix)
